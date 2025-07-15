@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<robot name="conveyor2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find conveyor2_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find conveyor2_description)/urdf/conveyor2.trans" />
+<xacro:include filename="$(find conveyor2_description)/urdf/conveyor2.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-1.6057285769232396e-16 -3.211457153846479e-16 0.381896551724138" rpy="0 0 0"/>
+    <mass value="3642.399999999998"/>
+    <inertia ixx="958.494925" iyy="1325.246925" izz="2097.310667" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://conveyor2_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://conveyor2_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+</robot>

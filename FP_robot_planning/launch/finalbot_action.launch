@@ -1,0 +1,5 @@
+<launch>
+    <node name="grasp" pkg="FP_robot_planning" type="grasp.py"/>
+    <node name="number_detect" pkg="FP_robot_planning" type="number_detect.py"/>
+    <node name="number_nav" pkg="FP_robot_planning" type="number_nav.py"/>
+</launch>

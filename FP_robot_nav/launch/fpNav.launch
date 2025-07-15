@@ -1,0 +1,70 @@
+<launch>
+  <!-- 紅色位置參數 -->
+  <!-- <arg name="x" default="-5"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="0"/>
+  <arg name="Y" default="3.14149"/> -->
+  <!-- 藍色位置參數 -->
+  <!-- <arg name="x" default="0"/>
+  <arg name="y" default="-4"/>
+  <arg name="z" default="0"/>
+  <arg name="Y" default="4.712385"/> -->
+  <!-- 綠色位置參數 -->
+  <arg name="x" default="3.5"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="0"/>
+  <arg name="Y" default="0"/>
+  <!-- 黑色位置參數 -->
+  <!-- <arg name="x" default="0"/>
+  <arg name="y" default="4"/>
+  <arg name="z" default="0"/>
+  <arg name="Y" default="1.570795"/> -->
+  <!-- Arguments -->
+  <arg name="map_file" default="$(find myrobot_1100410_description)/maps/map.yaml"/>
+  <arg name="simulation" default= "false"/> 
+  <arg name="planner"  default="dwa" doc="opt: dwa, teb"/> 
+  <arg name="move_forward_only" default="false"/>
+  <arg name="use_dijkstra" default= "true"/>  
+  <arg name="cmd_vel_topic" default="cmd_vel" />
+  <arg name="odom_topic" default="odom" />
+  
+  <!-- Map server -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)">
+    <param name="frame_id" value="map"/>
+  </node>
+  <!-- AMCL -->
+  <node pkg="amcl" type="amcl" name="amcl" output="screen">
+    <rosparam file="$(find myrobot_1100410_description)/param/myrobot/amcl_params.yaml" command="load" />
+    <param name="initial_pose_x"            value="$(arg x)"/>
+    <param name="initial_pose_y"            value="$(arg y)"/>
+    <param name="initial_pose_a"            value="$(arg Y)"/>
+  </node>
+  <!-- move_base -->
+  <!-- <include file="$(find robot_navigation)/launch/move_base.launch">
+    <arg name="planner"               value="$(arg planner)"/>
+    <arg name="simulation"            value="$(arg simulation)"/>
+    <arg name="move_forward_only"     value="$(arg move_forward_only)"/>
+    <arg name="use_dijkstra"     value="$(arg use_dijkstra)"/>
+  </include> -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <!-- use global_planner replace default navfn as global planner ,global_planner support A* and dijkstra algorithm-->
+    <param name="base_global_planner" value="global_planner/GlobalPlanner"/>
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+    <!-- <rosparam file="$(find robot_navigation)/param/$(env BASE_TYPE)/global_planner_params.yaml" command="load" />       -->
+    <rosparam file="$(find myrobot_1100410_description)/param/myrobot/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find myrobot_1100410_description)/param/myrobot/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find myrobot_1100410_description)/param/myrobot/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find myrobot_1100410_description)/param/myrobot/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find myrobot_1100410_description)/param/myrobot/move_base_params.yaml" command="load" />
+    <rosparam file="$(find myrobot_1100410_description)/param/myrobot/dwa_local_planner_params.yaml" command="load" />
+    <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
+    <remap from="odom" to="$(arg odom_topic)"/>
+    <param name="DWAPlannerROS/min_vel_x" value="0.0" if="$(arg move_forward_only)" />
+    <!--default is True,use dijkstra algorithm;set to False,usd A* algorithm-->
+    <param name="GlobalPlanner/use_dijkstra " value="$(arg use_dijkstra)" />    
+  </node>
+
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find myrobot_1100410_description)/rviz/map_tool.rviz"/>
+  <node pkg="waterplus_map_tools" type="wp_navi_server" name="wp_navi_server" output="screen"/>
+  <node pkg="waterplus_map_tools" type="wp_manager" name="wp_manager" output="screen"/>
+</launch> 

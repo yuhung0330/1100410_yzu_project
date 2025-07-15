@@ -1,0 +1,504 @@
+<?xml version="1.0" ?>
+  <robot name="new_final_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find new_final_robot_description)/urdf/materials.xacro" />
+  <xacro:include filename="$(find new_final_robot_description)/urdf/new_final_robot.trans" />
+  <xacro:include filename="$(find new_final_robot_description)/urdf/new_final_robot.gazebo" />
+
+  <link name="base_footprint"/>
+
+  <joint name="base_joint" type="fixed">  
+    <parent link="base_footprint"/>  
+    <child link="base_link"/>  
+    <origin rpy="0 0 0" xyz="0 0 0"/>  
+  </joint>  
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.0617256247592863 -8.868711138370907e-17 0.40523748834083384" rpy="0 0 0"/>
+      <mass value="3297.3820419522385"/>
+      <inertia ixx="303.226541" iyy="370.831466" izz="569.568597" ixy="-0.0" iyz="-0.0" ixz="12.534123"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link1_1">
+    <inertial>
+      <origin xyz="-1.1102230246251565e-16 0.0 0.13500000000000012" rpy="0 0 0"/>
+      <mass value="60.09391580428419"/>
+      <inertia ixx="0.500657" iyy="0.500657" izz="0.271174" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.6 -0.0 -0.93" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/link1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0.6 -0.0 -0.93" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/link1_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link2_1">
+    <inertial>
+      <origin xyz="-1.1102230246251565e-16 0.0 0.19999999999999996" rpy="0 0 0"/>
+      <mass value="89.02802341375434"/>
+      <inertia ixx="1.38791" iyy="1.38791" izz="0.401739" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.6 -0.0 -1.2" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/link2_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0.6 -0.0 -1.2" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/link2_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link3_1">
+    <inertial>
+      <origin xyz="-1.1102230246251565e-16 0.0 0.19999999999999996" rpy="0 0 0"/>
+      <mass value="89.02802341375434"/>
+      <inertia ixx="1.38791" iyy="1.38791" izz="0.401739" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.6 -0.0 -1.6" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/link3_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0.6 -0.0 -1.6" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/link3_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link0_1">
+    <inertial>
+      <origin xyz="0.0 0.0 0.06500000000000006" rpy="0 0 0"/>
+      <mass value="28.934107609470168"/>
+      <inertia ixx="0.106031" iyy="0.106031" izz="0.130565" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.6 -0.0 -0.8" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/link0_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0.6 -0.0 -0.8" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/link0_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="right_front_1">
+    <inertial>
+      <origin xyz="8.326672684688674e-17 -0.050000000000000044 0.0" rpy="0 0 0"/>
+      <mass value="98.64600932271955"/>
+      <inertia ixx="1.068665" iyy="1.97292" izz="1.068665" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.2 0.5 -0.2" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/right_front_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.2 0.5 -0.2" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/right_front_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="left_front_1">
+    <inertial>
+      <origin xyz="5.551115123125783e-17 0.050000000000000044 -5.551115123125783e-17" rpy="0 0 0"/>
+      <mass value="98.64600932271955"/>
+      <inertia ixx="1.068665" iyy="1.97292" izz="1.068665" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.2 -0.5 -0.2" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/left_front_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.2 -0.5 -0.2" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/left_front_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="lidar_1">
+    <inertial>
+      <origin xyz="0.0 1.0188144251725274e-17 -0.024999999999999967" rpy="0 0 0"/>
+      <mass value="1.7519219478337453"/>
+      <inertia ixx="0.00158" iyy="0.00069" izz="0.00154" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.525 -0.0 -0.15" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.525 -0.0 -0.15" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="camera_1">
+    <inertial>
+      <origin xyz="0.04779284158635222 1.3514947432424196e-19 0.050000000000000044" rpy="0 0 0"/>
+      <mass value="12.067290844392534"/>
+      <inertia ixx="0.03098" iyy="0.020821" izz="0.032639" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.7 -0.0 -0.6" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0.7 -0.0 -0.6" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="right_gripper_1">
+    <inertial>
+      <origin xyz="0.0 0.024999999999999967 0.10000000000000009" rpy="0 0 0"/>
+      <mass value="7.85"/>
+      <inertia ixx="0.027802" iyy="0.032708" izz="0.008177" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.6 0.35 -2.15" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/right_gripper_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0.6 0.35 -2.15" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/right_gripper_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="left_gripper_1">
+    <inertial>
+      <origin xyz="0.0 -0.024999999999999967 0.10000000000000009" rpy="0 0 0"/>
+      <mass value="7.85"/>
+      <inertia ixx="0.027802" iyy="0.032708" izz="0.008177" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.6 -0.35 -2.15" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/left_gripper_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0.6 -0.35 -2.15" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/left_gripper_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="lidar3_1">
+    <inertial>
+      <origin xyz="2.7755575615628914e-17 -0.025000000000000133 -0.02500000000000001" rpy="0 0 0"/>
+      <mass value="1.7519219478337458"/>
+      <inertia ixx="0.00069" iyy="0.00158" izz="0.00154" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.1 -0.65 -0.15" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/lidar3_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0.1 -0.65 -0.15" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/lidar3_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="ball_wheel_1">
+    <inertial>
+      <origin xyz="0.15000000000000013 5.4897996801157066e-17 -0.0791666666666667" rpy="0 0 0"/>
+      <mass value="83.2325703660445"/>
+      <inertia ixx="0.607771" iyy="0.607771" izz="0.811518" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.7 -0.0 -0.2" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/ball_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0.7 -0.0 -0.2" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/ball_wheel_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="lidar2_1">
+    <inertial>
+      <origin xyz="0.0 0.02499999999999991 -0.024999999999999967" rpy="0 0 0"/>
+      <mass value="1.7519219478337456"/>
+      <inertia ixx="0.00069" iyy="0.00158" izz="0.00154" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.1 0.65 -0.15" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/lidar2_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0.1 0.65 -0.15" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/lidar2_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link5_1">
+    <inertial>
+      <origin xyz="-1.1102230246251565e-16 0.0 0.024008264462810125" rpy="0 0 0"/>
+      <mass value="47.49249999999999"/>
+      <inertia ixx="2.125907" iyy="0.163122" izz="2.26902" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.6 -0.0 -2.1" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/link5_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0.6 -0.0 -2.1" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/link5_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link_4_1">
+    <inertial>
+      <origin xyz="0.1557284240502928 0.0009486975328736953 0.05019696840713328" rpy="0 0 0"/>
+      <mass value="25.250485727550025"/>
+      <inertia ixx="0.054321" iyy="0.870172" izz="0.886142" ixy="-0.00454" iyz="-6e-06" ixz="-0.000944"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.6 -0.0 -2.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/link_4_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0.6 -0.0 -2.0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/link_4_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="camera2_1">
+    <inertial>
+      <origin xyz="0.0 -1.6373171699782946e-07 0.012500244267079186" rpy="0 0 0"/>
+      <mass value="0.47440546645918674"/>
+      <inertia ixx="0.000116" iyy="0.000116" izz="0.000183" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.2125 -0.002103 -2.100874" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/camera2_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin xyz="0.2125 -0.002103 -2.100874" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://new_final_robot_description/meshes/camera2_1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="joint0" type="revolute">
+    <origin xyz="-0.6 0.0 0.8" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="link0_1"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit upper="6.28" lower="-6.28" effort="300" velocity="1"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+  <joint name="joint1" type="revolute">
+    <origin xyz="0.0 0.0 0.13" rpy="0 0 0"/>
+    <parent link="link0_1"/>
+    <child link="link1_1"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit upper="2" lower="-2" effort="300" velocity="1"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+  <joint name="joint2" type="revolute">
+    <origin xyz="0.0 0.0 0.27" rpy="0 0 0"/>
+    <parent link="link1_1"/>
+    <child link="link2_1"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit upper="0.1" lower="-2.0944" effort="300" velocity="1"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+  <joint name="joint3" type="revolute">
+    <origin xyz="0.0 0.0 0.4" rpy="0 0 0"/>
+    <parent link="link2_1"/>
+    <child link="link3_1"/>
+      <axis xyz="0.0 1.0 0.0"/>
+    <limit upper="0.1" lower="-2.0944" effort="300" velocity="1"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+  <joint name="joint4" type="revolute">
+    <origin xyz="0.0 0.0 0.4" rpy="0 0 0"/>
+    <parent link="link3_1"/>
+    <child link="link_4_1"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <limit upper="0.1" lower="-1.5708" effort="300" velocity="1"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+  <joint name="joint5" type="revolute">
+    <origin xyz="0.0 0.0 0.1" rpy="0 0 0"/>
+    <parent link="link_4_1"/>
+    <child link="link5_1"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit lower="0" upper="6.28" effort="300" velocity="1" />
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+  <link name="grasping_frame"/>
+
+  <joint name="grasping_frame_joint" type="fixed">
+    <parent link="link5_1"/>
+    <child link="grasping_frame"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="finger_joint1" type="prismatic">
+    <origin xyz="0.0 -0.35 0.05" rpy="0 0 0"/>
+    <parent link="link5_1"/>
+    <child link="right_gripper_1"/>
+    <axis xyz="0 1 0" />
+    <limit effort="300" lower="0" upper="0.20" velocity="1"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+  <joint name="finger_joint2" type="prismatic">
+    <origin xyz="0.0 0.35 0.05" rpy="0 0 0"/>
+    <parent link="link5_1"/>
+    <child link="left_gripper_1"/>
+    <axis xyz="0 1 0" />
+    <limit effort="300" lower="-0.20" upper="0" velocity="1"/>
+    <dynamics damping="50" friction="1"/>
+  </joint>
+
+  <joint name="right_front_joint" type="continuous">
+    <origin xyz="0.2 -0.5 0.2" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="right_front_1"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint>
+
+  <joint name="left_front_joint" type="continuous">
+    <origin xyz="0.2 0.5 0.2" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="left_front_1"/>
+    <axis xyz="0.0 1.0 0.0"/>
+  </joint>
+
+  <joint name="lidar_joint" type="fixed">
+    <origin xyz="0.525 0.0 0.15" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="lidar_1"/>
+  </joint>
+
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="-0.7 0.0 0.6" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="camera_1"/>
+  </joint>
+
+  <joint name="lidar2_joint" type="fixed">
+    <origin xyz="-0.1 0.65 0.15" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="lidar3_1"/>
+  </joint>
+
+  <joint name="ball_wheel_joint" type="fixed">
+    <origin xyz="-0.7 0.0 0.2" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="ball_wheel_1"/>
+  </joint>
+
+  <joint name="lidar3_joint" type="fixed">
+    <origin xyz="-0.1 -0.65 0.15" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="lidar2_1"/>
+  </joint>
+
+
+  <joint name="camera2_joint" type="fixed">
+    <origin xyz="0.3875 0.002103 0.100874" rpy="0 0 0"/>
+    <parent link="link_4_1"/>
+    <child link="camera2_1"/>
+  </joint>
+
+</robot>

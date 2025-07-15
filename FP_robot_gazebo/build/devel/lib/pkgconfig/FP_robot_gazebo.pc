@@ -1,0 +1,8 @@
+prefix=/home/yuhung/catkin_ws/src/FP_robot_gazebo/build/devel
+
+Name: FP_robot_gazebo
+Description: Description of FP_robot_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

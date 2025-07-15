@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/yuhung/catkin_ws/src/FP_robot_gazebo/build/devel/setup.sh

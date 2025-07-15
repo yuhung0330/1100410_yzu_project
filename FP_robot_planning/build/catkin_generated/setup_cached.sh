@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+# generated from catkin/python/catkin/environment_cache.py
+
+# based on a snapshot of the environment before and after calling the setup script
+# it emulates the modifications of the setup script without recurring computations
+
+# new environment variables
+
+# modified environment variables
+export CMAKE_PREFIX_PATH="/home/yuhung/catkin_ws/src/FP_robot_planning/build/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/yuhung/catkin_ws/src/FP_robot_planning/build/devel/lib:$LD_LIBRARY_PATH"
+export PATH='/opt/ros/noetic/bin:/home/yuhung/.vscode-server/bin/f1e16e1e6214d7c44d078b1f0607b2388f29d729/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.7/bin:/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.7/libnvvp:/mnt/c/Program Files (x86)/Razer/ChromaBroadcast/bin:/mnt/c/Program Files/Razer/ChromaBroadcast/bin:/mnt/c/Program Files (x86)/Razer Chroma SDK/bin:/mnt/c/Program Files/Razer Chroma SDK/bin:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Users/yuhung/anaconda3:/mnt/c/Users/yuhung/anaconda3/Library/mingw-w64/bin:/mnt/c/Users/yuhung/anaconda3/Library/usr/bin:/mnt/c/Users/yuhung/anaconda3/Library/bin:/mnt/c/Users/yuhung/anaconda3/Scripts:/mnt/c/Users/彭昱弘/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/MATLAB/R2023b/runtime/win64:/mnt/c/Program Files/MATLAB/R2023b/bin:/mnt/c/Program Files/MATLAB/R2022b/bin:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2022.2.0/:/mnt/d/ffmpeg/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/nodejs/:/mnt/d/cmake/cmake-3.29.3-windows-x86_64/bin/cmake.exe:/mnt/c/Users/yuhung/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Users/yuhung/anaconda3:/mnt/c/Users/yuhung/anaconda3/Library/mingw-w64/bin:/mnt/c/Users/yuhung/anaconda3/Library/usr/bin:/mnt/c/Users/yuhung/anaconda3/Library/bin:/mnt/c/Users/yuhung/anaconda3/Scripts:/mnt/c/Users/yuhung/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/yuhung/.dotnet/tools:/mnt/c/Users/yuhung/AppData/Roaming/npm:/mnt/c/Program Files/CMake/bin:/mnt/c/Users/yuhung/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin'
+export PKG_CONFIG_PATH="/home/yuhung/catkin_ws/src/FP_robot_planning/build/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PWD='/home/yuhung/catkin_ws/src/FP_robot_planning/build'
+export ROSLISP_PACKAGE_DIRECTORIES="/home/yuhung/catkin_ws/src/FP_robot_planning/build/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/yuhung/catkin_ws/src/FP_robot_planning:$ROS_PACKAGE_PATH"

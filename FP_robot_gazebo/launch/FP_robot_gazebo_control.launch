@@ -1,0 +1,9 @@
+<launch>
+
+    <!-- 启动Gazebo  -->
+    <include file="$(find FP_robot_gazebo)/launch/FP_robot_world.launch" />   
+
+    <!-- 启动Gazebo controllers -->
+    <include file="$(find FP_robot_gazebo)/launch/FP_robot_gazebo_controller.launch" />   
+
+</launch>

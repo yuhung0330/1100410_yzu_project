@@ -1,0 +1,24 @@
+#---(in meters)---
+# transform_tolerance: 0.2
+footprint: [[0.6, 0.6], [0.6, -0.6], [-0.6, -0.6], [-0.6, 0.6]]
+
+obstacle_layer:
+  enabled: true
+  obstacle_range: 3
+  raytrace_range: 3.5
+  inflation_radius: 0.6
+  track_unknown_space: true
+  combination_method: 1
+
+  observation_sources: base_laser_link
+  base_laser_link: {data_type: LaserScan, topic: /scan, marking: true, clearing: true}
+
+
+inflation_layer:
+  enabled:              true
+  cost_scaling_factor:  4.0  # exponential rate at which the obstacle cost drops off (default: 10)
+  inflation_radius:     1 # max. distance from an obstacle at which costs are incurred for planning paths.
+
+static_layer:
+  enabled:              true
+  map_topic:            "/map"

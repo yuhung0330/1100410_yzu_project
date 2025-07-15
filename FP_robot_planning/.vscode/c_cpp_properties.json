@@ -1,0 +1,41 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/opt/ros/noetic/include/**",
+        "/home/yuhung/catkin_ws/devel/include/**",
+        "/home/yuhung/catkin_ws/src/FP_robot_planning/include/**",
+        "/home/yuhung/catkin_ws/src/atr_pkg/include/**",
+        "/home/yuhung/catkin_ws/src/DynamixelSDK/ros/dynamixel_sdk/include/**",
+        "/home/yuhung/catkin_ws/src/hello_pkg/include/**",
+        "/home/yuhung/catkin_ws/src/imu_pkg/include/**",
+        "/home/yuhung/catkin_ws/src/lidar_pkg/include/**",
+        "/home/yuhung/catkin_ws/src/map_pkg/include/**",
+        "/home/yuhung/catkin_ws/src/nav_pkg/include/**",
+        "/home/yuhung/catkin_ws/src/qq_msgs/include/**",
+        "/home/yuhung/catkin_ws/src/slam_pkg/include/**",
+        "/home/yuhung/catkin_ws/src/ssr_pkg/include/**",
+        "/home/yuhung/catkin_ws/src/turtlebot3_simulations/turtlebot3_fake/include/**",
+        "/home/yuhung/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/include/**",
+        "/home/yuhung/catkin_ws/src/turtlebot3/turtlebot3_slam/include/**",
+        "/home/yuhung/catkin_ws/src/vel_pkg/include/**",
+        "/home/yuhung/catkin_ws/src/waterplus_map_tools/include/**",
+        "/home/yuhung/catkin_ws/src/wpb_home/wpb_home_bringup/include/**",
+        "/home/yuhung/catkin_ws/src/wpb_home/wpb_home_tutorials/include/**",
+        "/home/yuhung/catkin_ws/src/wpb_home/wpbh_local_planner/include/**",
+        "/home/yuhung/catkin_ws/src/wpr_simulation/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

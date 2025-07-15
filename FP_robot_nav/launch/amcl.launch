@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<launch>
+	<arg name="x" default="4"/>
+	<arg name="y" default="0.2"/>
+	<arg name="z" default="0"/>
+	<arg name="Y" default="1.570795"/>
+	<node pkg="amcl" type="amcl" name="amcl" output="screen">
+	    <param name="initial_pose_x"            value="$(arg x)"/>
+		<param name="initial_pose_y"            value="$(arg y)"/>
+		<param name="initial_pose_a"            value="$(arg Y)"/>
+	</node>
+</launch>

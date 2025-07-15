@@ -1,0 +1,14 @@
+<launch>
+  
+    <!-- Launch Gazebo  -->
+    <include file="$(find FP_robot_gazebo)/launch/FP_robot_world.launch" />
+
+    <!-- ros_control arm launch file -->
+    <include file="$(find FP_robot_gazebo)/launch/FP_robot_gazebo_states.launch" />   
+
+    <!-- ros_control trajectory control dof arm launch file -->
+    <include file="$(find FP_robot_gazebo)/launch/FP_robot_trajectory_controller.launch" />
+
+    <!-- moveit launch file -->
+    <include file="$(find final_robot_moveit_config)/launch/moveit_planning_execution.launch" />
+</launch>

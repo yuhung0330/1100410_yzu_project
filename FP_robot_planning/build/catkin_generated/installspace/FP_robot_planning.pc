@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: FP_robot_planning
+Description: Description of FP_robot_planning
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

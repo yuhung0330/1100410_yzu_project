@@ -1,0 +1,8 @@
+<launch>
+    <!-- 機器人模型 -->
+    <param name="robot_description_box" command="$(find xacro)/xacro $(find box_description)/urdf/box.xacro"/> 
+    <param name="robot_description_box2" command="$(find xacro)/xacro $(find box_description)/urdf/box.xacro"/> 
+    <!-- 在gazebo中載入機器人模型-->
+    <node name="spawn_box" pkg="gazebo_ros" type="spawn_model" args="-param robot_description_box -urdf -model box_model -x 4 -y -1.2 -z 0.65 "/>
+    <node name="spawn_box2" pkg="gazebo_ros" type="spawn_model" args="-param robot_description_box2 -urdf -model box_model2 -x 4 -y -1.2 -z 0 "/>
+</launch>

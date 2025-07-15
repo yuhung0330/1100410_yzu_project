@@ -1,0 +1,34 @@
+<sdf version="1.6">
+  <model name="pallet">
+    <link name="link_1">
+      <inertial>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.166667</ixx>
+          <iyy>0.166667</iyy>
+          <izz>0.166667</izz>
+        </inertia>
+      </inertial>
+      <pose>0 0 0.075 0 0 0</pose>
+      
+      <!-- Visual simplified -->
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>1.1 1.1 0.15</size>
+          </box>
+        </geometry>
+      </visual>
+
+      <!-- Collision simplified -->
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.997 0.3 0.3</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <static>0</static>
+  </model>
+</sdf>

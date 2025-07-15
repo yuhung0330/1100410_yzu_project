@@ -1,0 +1,361 @@
+<?xml version="1.0" ?>
+<robot name="finalbot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+  <xacro:property name="body_color" value="Gazebo/Silver" />
+
+  <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+          <robotNamespace>/arm</robotNamespace>
+      </plugin>
+  </gazebo>
+  <gazebo reference="base_link">
+    <material>${body_color}</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+  </gazebo>
+
+  <gazebo reference="link1_1">
+    <material>${body_color}</material>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+  <gazebo reference="link2_1">
+    <material>${body_color}</material>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+  <gazebo reference="link3_1">
+    <material>${body_color}</material>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+  <gazebo reference="link4_1">
+    <material>${body_color}</material>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+  <gazebo reference="link0_1">
+    <material>${body_color}</material>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+  <gazebo reference="right_front_1">
+    <material>${body_color}</material>
+    <mu1>1000000</mu1>
+    <mu2>1000000</mu2>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+  <gazebo reference="left_front_1">
+    <material>${body_color}</material>
+    <mu1>1000000</mu1>
+    <mu2>1000000</mu2>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+  <gazebo reference="lidar_1">
+    <material>${body_color}</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+  <gazebo reference="camera_1">
+    <material>${body_color}</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+  <gazebo reference="link5_1">
+    <material>${body_color}</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+  <gazebo reference="camera2_1">
+    <material>${body_color}</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+  <gazebo reference="right_gripper_1">
+    <material>${body_color}</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+
+  <gazebo reference="left_gripper_1">
+    <material>${body_color}</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>false</selfCollide>
+  </gazebo>
+
+  <gazebo reference="lidar3_1">
+    <material>${body_color}</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+  <gazebo reference="ball_wheel_1">
+    <material>${body_color}</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+  <gazebo reference="lidar2_1">
+    <material>${body_color}</material>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo>
+    <plugin name="mybot_controller" filename="libgazebo_ros_diff_drive.so">
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometrySource>world</odometrySource>
+      <publishOdomTF>true</publishOdomTF>
+      <robotBaseFrame>base_footprint</robotBaseFrame>
+      <publishWheelTF>false</publishWheelTF>
+      <publishTf>true</publishTf>
+      <publishWheelJointState>false</publishWheelJointState>
+      <legacyMode>false</legacyMode>
+      <updateRate>30</updateRate>
+      <leftJoint>left_front_joint</leftJoint>
+      <rightJoint>right_front_joint</rightJoint>
+      <wheelSeparation>1</wheelSeparation>
+      <wheelDiameter>0.4</wheelDiameter>
+      <wheelAcceleration>10</wheelAcceleration>
+      <wheelTorque>1500</wheelTorque>
+      <rosDebugLevel>na</rosDebugLevel>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="camera_1">
+    <sensor type="camera" name="csi Camera">
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <camera>
+      <pose>0 0 0 0 0.2 3.14159 </pose>
+          <horizontal_fov>1.085595</horizontal_fov>
+          <image>
+              <width>640</width>
+              <height>480</height>
+              <format>R8G8B8</format>
+          </image>
+          <clip>
+              <near>0.03</near>
+              <far>100</far>
+          </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>30.0</updateRate>
+        <cameraName>/</cameraName>
+        <frameName>camera_1</frameName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="camera2_1">
+    <sensor type="depth" name="camera_with_depth">
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <camera>
+        <pose>0 0 0 0 -1.570795 0</pose>
+        <horizontal_fov>1.5</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>  <!-- RGB 彩色圖像 -->
+        </image>
+        <clip>
+          <near>0.03</near>
+          <far>100</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_openni_kinect.so">
+        <baseline>0.2</baseline>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>10.0</updateRate>  <!-- 控制帧率，设置为0意味着使用上面的30Hz -->
+        
+        <!-- RGB 图像 -->
+        <cameraName>camera2_1</cameraName>
+        <imageTopicName>/camera/color/image_raw</imageTopicName>
+        <cameraInfoTopicName>/camera/color/camera_info</cameraInfoTopicName>
+        
+        <!-- 深度图像 -->
+        <depthImageTopicName>/camera/depth/image_raw</depthImageTopicName>
+        <depthImageCameraInfoTopicName>/camera/depth/camera_info</depthImageCameraInfoTopicName>
+        
+        <!-- 点云 -->
+        <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
+        
+        <!-- 相机的frame_id -->
+        <frameName>camera2_1</frameName>
+        
+        <!-- 点云的最小和最大范围 -->
+        <pointCloudCutoff>0.5</pointCloudCutoff>
+        <pointCloudCutoffMax>3.0</pointCloudCutoffMax>
+        
+        <!-- 畸变参数 (设置为零表示无畸变) -->
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="lidar_1">
+    <material>Gazebo/FlatBlack</material>
+    <sensor type="ray" name="rplidar_sensor1">
+      <pose>-0.55 -0.0 -0.15 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>30</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>0.5</resolution>
+            <min_angle>-1.570795</min_angle>
+            <max_angle>1.570795</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.120</min>
+          <max>6.0</max>
+          <resolution>0.015</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_rplidar_controller" filename="libgazebo_ros_laser.so">
+        <topicName>scan1</topicName>
+        <frameName>lidar_1</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  
+  <gazebo reference="lidar2_1">
+    <material>Gazebo/FlatBlack</material>
+    <sensor type="ray" name="rplidar_sensor2">
+      <pose>0.1 0.65 -0.15 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>30</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>0.5</resolution>
+            <min_angle>-1</min_angle>
+            <max_angle>-3.6</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.120</min>
+          <max>6.0</max>
+          <resolution>0.015</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_rplidar_controller" filename="libgazebo_ros_laser.so">
+        <topicName>scan2</topicName>
+        <frameName>lidar2_1</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="lidar3_1">
+    <material>Gazebo/FlatBlack</material>
+    <sensor type="ray" name="rplidar_sensor3">
+      <pose>0.1 -0.65 -0.15 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>30</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>0.5</resolution>
+            <min_angle>1</min_angle>
+            <max_angle>3.6</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.120</min>
+          <max>6.0</max>
+          <resolution>0.015</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_rplidar_controller" filename="libgazebo_ros_laser.so">
+        <topicName>scan3</topicName>
+        <frameName>lidar3_1</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="gazebo_grasp_fix" filename="libgazebo_grasp_fix.so">
+        <arm>
+            <!-- 机械臂名称,注意确保唯一性 -->
+            <arm_name>arm_gripper</arm_name>
+            
+            <!--与夹持器末端 link 相连的 link 、,可以配置多个-->
+            <palm_link>link5_1</palm_link>
+            
+            <!--直接与抓取物体接触的 link ,与 palm_link 之间不能存在其他的 link-->
+            <gripper_link>right_gripper_1</gripper_link>
+            <gripper_link>left_gripper_1</gripper_link>
+        </arm>
+        
+        <!--是否是相反力的夹⻆判断阈值 -->
+        <forces_angle_tolerance>90</forces_angle_tolerance>
+        
+        <!--检查频率,需要小于 gazebo 的刷新频率-->
+        <update_rate>50</update_rate>
+        
+        <!-- 检测阈值:在一个 update_rate 内,物体与夹爪之间的碰触次数-->
+        <grip_count_threshold>1</grip_count_threshold>
+
+        <!-- 最大记数数目，一般为grip_count_threshold的两倍-->
+        <max_grip_count>2</max_grip_count>
+        
+        <!--释放物体时夹爪与物体的距离-->
+        <release_tolerance>0.005</release_tolerance>
+        
+        <!-- 当一个对象被附加时，与它的碰撞可能被禁用，以防机器人仍然保持抖动-->
+        <disable_collisions_on_attach>false</disable_collisions_on_attach>
+        <contact_topic>__default_topic__</contact_topic>
+    </plugin>
+  </gazebo>
+</robot>
